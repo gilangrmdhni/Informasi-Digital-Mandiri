@@ -14,16 +14,14 @@ const products = [
   },
   {
     title: 'HMS',
-    description: 'Headline Message Service is a brilliant Interactive Social Media, which can be sent and viewed quickly resulting in perfect and impressive communication.',
-    descriptiontwo: 'Once the HMS user sends a message in the form of multimedia, it will automatically open on the cellphone screen so that no one message is not read or does not arrive, all messages will arrive very quickly.',
+    descriptiontwo: 'Headline Message Service (HMS) is an instant messaging application in the form of text and multimedia, which will appear "full screen" automatically on the recipients cellphone, which has internet access and the HMS application on the cellphone.',
     image: '/hms.png',
     label: 'Headline Message Service'
 
   },
   {
     title: 'CBN',
-    description1: 'CB Notify is technology automatically sends a real unanswered call notification to B party when they cannot be reached by A party. The ',
-    description2: 'resulting return call creates revenue.',
+    description1: 'CB Notify is technology automatically sends a real unanswered call notification to B party when they cannot be reached by A party. The resulting return call creates revenue.',
     image: '/cbn.png',
     label:'Call Back Notify',
   },
@@ -52,13 +50,15 @@ const Product = () => {
   };
 
   return (
-    <div id='product' className='max-w-[1240px] m-auto mt-20 mb-10 h-[620x]'>
-      <div className='col-span-2 text-center md:text-right'>
+    <div id='product' className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-10'>
+      {/* Judul */}
+      <div className='text-center md:text-right'>
         <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-5'>
           P R O D U C T S
         </h1>
         <hr className='border-t-1 border-sky-600 w-full mx-auto' />
       </div>
+
       {/* Navbar Slider */}
       <div className='flex flex-wrap justify-start mb-5 mt-10'>
         {products.map((product, index) => (
@@ -69,7 +69,7 @@ const Product = () => {
               index === activeSlide
                 ? 'bg-white text-black'
                 : 'bg-transparent text-white'
-            } px-3 py-1 m-1 rounded-full border`}
+            } px-4 py-2 m-2 rounded-full border`}
           >
             {product.title}
           </button>

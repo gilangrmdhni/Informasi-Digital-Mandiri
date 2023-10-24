@@ -31,7 +31,9 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className={`fixed left-0 right-0 mx-auto max-w-[1280px] w-full justify-center items-center top-6 z-10 ease-in duration-300 rounded-full border border-sky-700 ${scrolling ? 'h-auto' : 'h-auto'}`}
+      className={`fixed left-0 right-0 mx-auto max-w-[1280px] w-full justify-center items-center top-6 z-10 ease-in duration-300 rounded-full border border-sky-700 ${
+        scrolling ? 'h-auto' : 'h-auto'
+      }`}
     >
       <div className='flex justify-between items-center p-3 text-white '>
         <Link href='/'>
@@ -70,38 +72,55 @@ const Navbar = () => {
         {/* Mobile Button */}
         <div onClick={handleNav} className='block sm:hidden z-10'>
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={40} style={{ color: `${textColor}` }} />
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={40} style={{ color: `${textColor}` }} />
           )}
         </div>
-        {/* Mobile Menu */}
-        <div
-          className={
-            nav
-              ? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-              : 'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'
-          }
-        >
-          <ul>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
+      </div>
+
+      {/* Mobile Sidebar */}
+      {nav && (
+        <div className='sm:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 text-white'>
+          <ul className='flex flex-col items-center space-y-8 mt-16'>
+            <li
+              onClick={handleNav}
+              className='text-3xl'
+              style={{ animation: 'fadeInDown 0.5s ease-in-out' }}
+            >
               <Link href='/#about'>About Us</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
+            <li
+              onClick={handleNav}
+              className='text-3xl'
+              style={{ animation: 'fadeInDown 0.7s ease-in-out' }}
+            >
               <Link href='/#service'>Services</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
+            <li
+              onClick={handleNav}
+              className='text-3xl'
+              style={{ animation: 'fadeInDown 0.9s ease-in-out' }}
+            >
               <Link href='/#portofolio'>Portofolio</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
+            <li
+              onClick={handleNav}
+              className='text-3xl'
+              style={{ animation: 'fadeInDown 1.1s ease-in-out' }}
+            >
               <Link href='/#product'>Products</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
+            <li
+              onClick={handleNav}
+              className='text-3xl'
+              style={{ animation: 'fadeInDown 1.3s ease-in-out' }}
+            >
               <Link href='/#contact'>Contact Us</Link>
             </li>
           </ul>
         </div>
-      </div>
+      )}
     </div>
   );
 };
