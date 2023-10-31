@@ -35,7 +35,7 @@ const Navbar = () => {
         scrolling ? 'h-auto' : 'h-auto'
       }`}
     >
-      <div className='flex justify-between items-center p-3 text-white '>
+      <div className='flex justify-between items-center p-3 px-6 text-white '>
         <Link href='/'>
           <div className='flex items-center'>
             {scrolling ? (

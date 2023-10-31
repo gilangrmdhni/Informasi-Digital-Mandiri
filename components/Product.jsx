@@ -23,7 +23,7 @@ const products = [
     title: 'CBN',
     description1: 'CB Notify is technology automatically sends a real unanswered call notification to B party when they cannot be reached by A party. The resulting return call creates revenue.',
     image: '/cbn.png',
-    label:'Call Back Notify',
+    label: 'Call Back Notify',
   },
   {
     title: 'VRBT',
@@ -50,62 +50,116 @@ const Product = () => {
   };
 
   return (
-    <div id='product' className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-10'>
-      {/* Judul */}
-      <div className='text-center md:text-right'>
-        <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-5'>
-          P R O D U C T S
-        </h1>
-        <hr className='border-t-1 border-sky-600 w-full mx-auto' />
-      </div>
+    <>
 
-      {/* Navbar Slider */}
-      <div className='flex flex-wrap justify-start mb-5 mt-10'>
-        {products.map((product, index) => (
-          <button
-            key={index}
-            onClick={() => changeSlide(index)}
-            className={`${
-              index === activeSlide
+      <div id='product' className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-10'>
+        {/* Judul */}
+        <div className='text-center md:text-right'>
+          <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-5'>
+            P R O D U C T S
+          </h1>
+          <hr className='border-t-1 border-sky-600 w-full mx-auto' />
+        </div>
+
+        {/* Navbar Slider */}
+        <div className='flex flex-wrap justify-start mb-5 mt-10'>
+          {products.map((product, index) => (
+            <button
+              key={index}
+              onClick={() => changeSlide(index)}
+              className={`${index === activeSlide
                 ? 'bg-white text-black'
                 : 'bg-transparent text-white'
-            } px-4 py-2 m-2 rounded-full border`}
-          >
-            {product.title}
-          </button>
-        ))}
+                } px-4 py-2 m-2 rounded-full border`}
+            >
+              {product.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Konten Slider */}
+        <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 p-4 mt-5'>
+          {/* Kolom Kanan (Gambar) */}
+          <div className='col-span-1 flex flex-col items-center'>
+            <img
+              src={products[activeSlide].image}
+              alt={products[activeSlide].title}
+              className='w-full h-auto max-w-[300px]'
+            />
+            <p className='text-white mt-2'>{products[activeSlide].title}</p>
+            <p className='text-white'>{products[activeSlide].label}</p>
+          </div>
+          {/* Kolom Kiri (Teks) */}
+          <div className='col-span-1'>
+            <p className='text-white py-2'>{products[activeSlide].description}</p>
+            {products[activeSlide].descriptiontwo && (
+              <p className='text-white py-2'>{products[activeSlide].descriptiontwo}</p>
+            )}
+            {products[activeSlide].description1 && (
+              <p className='text-white py-2'>{products[activeSlide].description1}</p>
+            )}
+            {products[activeSlide].description2 && (
+              <p className='text-white py-2'>{products[activeSlide].description2}</p>
+            )}
+            {products[activeSlide].description3 && (
+              <p className='text-white py-2'>{products[activeSlide].description3}</p>
+            )}
+
+            {/* Konten Khusus Game Speedup */}
+          </div>
+        </div>
+        {activeSlide === 0 && (
+          <div className='text-center pt-8'>
+            <div className='mx-auto max-w-screen-md flex flex-col items-center'>
+              <div className='grid grid-cols-1 sm:grid-cols-3 gap-12'>
+                <img src='/banner1.jpeg' alt='Promo Banner 1' className='w-full h-auto max-w-full sm:max-w-[250px] mx-auto mb-4' />
+                <img src='/banner2.jpeg' alt='Promo Banner 2' className='w-full h-auto max-w-full sm:max-w-[250px] mx-auto mb-4' />
+                <img src='/banner3.jpeg' alt='Promo Banner 3' className='w-full h-auto max-w-full sm:max-w-[250px] mx-auto mb-4' />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Konten Slider */}
-      <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 p-4 mt-5'>
-        {/* Kolom Kanan (Gambar) */}
-        <div className='col-span-1 flex flex-col items-center'>
-          <img
-            src={products[activeSlide].image}
-            alt={products[activeSlide].title}
-            className='w-full h-auto max-w-[300px]'
-          />
-          <p className='text-white mt-2'>{products[activeSlide].title}</p>
-          <p className='text-white'>{products[activeSlide].label}</p>
+      {activeSlide === 0 && (
+        <div className='max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-2 mt-10'>
+          {/* Judul */}
+          {/* Grid untuk Teks dan Gambar */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-1 gap-2">
+            <h1 className="text-white text-3xl font-semibold">ANDROID PACKAGE</h1>
+            {/* Kolom Kiri (Teks) */}
+            <div className="mt-10 flex">
+              {/* Kolom Kiri (Teks Stand Alone) */}
+              <div className="text-white">
+                <h2 className="text-2xl font-semibold">Stand Alone</h2>
+                <p className="py-1">4.000/3hari</p>
+                <p className="py-1">4.000/3hari</p>
+                <p className="py-1">4.000/3hari</p>
+              </div>
+
+              {/* Kolom Kanan (Teks Bundling) */}
+              <div className="text-white ml-16">
+                <h2 className="text-2xl font-semibold">Bundling</h2>
+                <p className="py-1">7.000/3hari(1GB) </p>
+                <p className="py-1">12.000/7hari(2GB)</p>
+                <p className="py-1">15.000/30hari(5GB) </p>
+              </div>
+            </div>
+
+            <div className='text-white'>
+              <h2 className="text-2xl font-semibold mt-5">IOS PACKAGE</h2>
+              <p className="py-1">16.000/30hari</p>
+              <button className="bg-red-500 border-white border px-8 md:px-12 py-2 md:py-2 rounded-full mt-4 text-white">
+                BUY PACKAGE
+              </button>
+            </div>
+          </div>
         </div>
-        {/* Kolom Kiri (Teks) */}
-        <div className='col-span-1'>
-          <p className='text-white py-2'>{products[activeSlide].description}</p>
-          {products[activeSlide].descriptiontwo && (
-            <p className='text-white py-2'>{products[activeSlide].descriptiontwo}</p>
-          )}
-          {products[activeSlide].description1 && (
-            <p className='text-white py-2'>{products[activeSlide].description1}</p>
-          )}
-          {products[activeSlide].description2 && (
-            <p className='text-white py-2'>{products[activeSlide].description2}</p>
-          )}
-          {products[activeSlide].description3 && (
-            <p className='text-white py-2'>{products[activeSlide].description3}</p>
-          )}
-        </div>
+      )}
+      <div className="flex justify-center items-center md:mt-[-10] mt-[-10] ">
+        <img src="/bgfoots.png" alt="Gambar" className="w-full h-full" />
       </div>
-    </div>
+    </>
   );
 };
 

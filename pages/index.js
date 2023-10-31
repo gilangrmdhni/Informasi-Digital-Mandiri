@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import OurStructure from '../components/OurStructure';
 import Layout from '../components/Layout';
 import Services from '../components/Services';
 import Portofolio from '../components/Portofolio';
@@ -18,6 +19,7 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <Hero />
+        <OurStructure />
         <About />
         <Services />
         <Portofolio />
