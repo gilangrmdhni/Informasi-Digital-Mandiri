@@ -15,7 +15,7 @@ const Contact = () => {
 
       {/* Kolom Kanan (Gambar) */}
       <div className="col-span-1 flex justify-center items-center">
-        <img src="/contacts.png" alt="Gambar" className="w-auto h-auto" />
+        <img src="/contacts.png" alt="Gambar" className="w-auto h-auto img-general" />
       </div>
 
       {/* Kolom Kiri Bawah (Alamat dan Email) */}

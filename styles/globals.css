@@ -4,7 +4,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Aileron', sans-serif;
+  /* font-family: 'Aileron', sans-serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .custom-img {
@@ -12,14 +13,31 @@ html {
 }
 
 
-@font-face {
+/* @font-face {
   font-family: 'Aileron';
   src: url('/fonts/Aileron-Regular.woff2') format('woff2'),
        url('/fonts/Aileron-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+} */
+
+
+@media screen and (min-width: 600px) {
+  .img-foot {
+    margin-top: -50px !important;
+  }
+
+  .img-general {
+    width: 400px;
+  }
 }
 
-body {
-  font-family: 'Aileron';
+@media screen and (max-width: 600px) {
+  .img-logo {
+    width: 200px;
+  }
+
+  .title-navbar {
+    font-size: 17px !important;
+  }
 }

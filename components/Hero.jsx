@@ -9,7 +9,7 @@ const Hero = ({ }) => {
         <img
           src='banner.png'
           alt='Your Image'
-          className='w-70 h-70 mx-auto pt-20'
+          className='w-70 h-70 mx-auto pt-20 img-logo'
         />
         <p className='py-5 mt-20 text-xl justify-center text-center max-w-[800px] '>{'IDM, Informasi Digital Mandiri, was established in 2022 in Jakarta, Indonesia. We started as an IT service provider such as software development, Operation and system integration. We focusing in only IT area as our team members are Expert in Software Development.'}</p>
       </div>

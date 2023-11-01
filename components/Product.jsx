@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const products = [
   {
@@ -49,6 +50,27 @@ const Product = () => {
     setActiveSlide(index);
   };
 
+  const handleClick = () => {
+    window.open(
+      'https://my.telkomsel.com/app/payment-method?link=abac6efd12e3521d7c886dc553d1abd75ddb3aae7cf36d48d651f52e2b2ee8696613b418d908db1255081d6b591f280b',
+      '_blank'
+    );
+  };
+
+  const handleClickPlayStore = () => {
+    window.open(
+      'https://play.google.com/store/search?q=game%20speedup&c=apps&hl=en-ID',
+      '_blank'
+    );
+  };
+
+  const handleClickAppStore = () => {
+    window.open(
+      'https://apps.apple.com/id/app/game-speedup/id1632397994',
+      '_blank'
+    );
+  };
+
   return (
     <>
 
@@ -78,7 +100,7 @@ const Product = () => {
         </div>
 
         {/* Konten Slider */}
-        <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 p-4 mt-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 justify-center gap-8 p-4 mt-20'>
           {/* Kolom Kanan (Gambar) */}
           <div className='col-span-1 flex flex-col items-center'>
             <img
@@ -93,7 +115,13 @@ const Product = () => {
           <div className='col-span-1'>
             <p className='text-white py-2'>{products[activeSlide].description}</p>
             {products[activeSlide].descriptiontwo && (
-              <p className='text-white py-2'>{products[activeSlide].descriptiontwo}</p>
+              <>
+               <p className='text-white py-2'>{products[activeSlide].descriptiontwo}</p>
+                <div className='grid grid-cols-1 sm:grid-cols-3 gap-12 mt-10'>
+                  <img  onClick={() => handleClickPlayStore()} src='/playstore.png' alt='Promo Banner 1' className='' />
+                  <img  onClick={() => handleClickAppStore()} src='/appstore.png' alt='Promo Banner 2' className='w-full h-auto max-w-full sm:max-w-[250px] mx-auto' />
+                </div>
+              </>
             )}
             {products[activeSlide].description1 && (
               <p className='text-white py-2'>{products[activeSlide].description1}</p>
@@ -109,7 +137,7 @@ const Product = () => {
           </div>
         </div>
         {activeSlide === 0 && (
-          <div className='text-center pt-8'>
+          <div className='text-center pt-8 mt-10'>
             <div className='mx-auto max-w-screen-md flex flex-col items-center'>
               <div className='grid grid-cols-1 sm:grid-cols-3 gap-12'>
                 <img src='/banner1.jpeg' alt='Promo Banner 1' className='w-full h-auto max-w-full sm:max-w-[250px] mx-auto mb-4' />
@@ -122,16 +150,17 @@ const Product = () => {
       </div>
 
       {activeSlide === 0 && (
-        <div className='max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-2 mt-10'>
+       <div>
+         <div className='max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-2 mt-20'>
           {/* Judul */}
           {/* Grid untuk Teks dan Gambar */}
           <div className="mt-10 grid grid-cols-1 md:grid-cols-1 gap-2">
             <h1 className="text-white text-3xl font-semibold">ANDROID PACKAGE</h1>
             {/* Kolom Kiri (Teks) */}
-            <div className="mt-10 flex">
+            <div className="mt-5 flex">
               {/* Kolom Kiri (Teks Stand Alone) */}
               <div className="text-white">
-                <h2 className="text-2xl font-semibold">Stand Alone</h2>
+                <h2 className="text-1xl font-semibold">Stand Alone</h2>
                 <p className="py-1">4.000/3hari</p>
                 <p className="py-1">4.000/3hari</p>
                 <p className="py-1">4.000/3hari</p>
@@ -139,7 +168,7 @@ const Product = () => {
 
               {/* Kolom Kanan (Teks Bundling) */}
               <div className="text-white ml-16">
-                <h2 className="text-2xl font-semibold">Bundling</h2>
+                <h2 className="text-1xl font-semibold">Bundling</h2>
                 <p className="py-1">7.000/3hari(1GB) </p>
                 <p className="py-1">12.000/7hari(2GB)</p>
                 <p className="py-1">15.000/30hari(5GB) </p>
@@ -149,16 +178,19 @@ const Product = () => {
             <div className='text-white'>
               <h2 className="text-2xl font-semibold mt-5">IOS PACKAGE</h2>
               <p className="py-1">16.000/30hari</p>
-              <button className="bg-red-500 border-white border px-8 md:px-12 py-2 md:py-2 rounded-full mt-4 text-white">
-                BUY PACKAGE
-              </button>
+                <button 
+                  onClick={() => handleClick()} className="bg-red-500 border-white border px-8 md:px-12 py-2 md:py-2 rounded-full mt-4 text-white">
+                  BUY PACKAGE
+                </button>
             </div>
           </div>
         </div>
+        <div className="flex justify-center items-center md:mt-[-10] mt-[-10] img-foot">
+          <img src="/bgfoots.png" alt="Gambar" className="w-full h-full mt-8" />
+        </div>
+       </div>
       )}
-      <div className="flex justify-center items-center md:mt-[-10] mt-[-10] ">
-        <img src="/bgfoots.png" alt="Gambar" className="w-full h-full" />
-      </div>
+      
     </>
   );
 };

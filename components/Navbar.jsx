@@ -45,7 +45,7 @@ const Navbar = () => {
                 style={{ width: '50px', height: '50px', marginRight: '10px' }}
               />
             ) : (
-              <p style={{ color: `${textColor}`, fontSize: '1.5rem' }} className='font-bold text-4xl'>
+              <p style={{ color: `${textColor}`, fontSize: '1.5rem' }} className='font-bold text-4xl title-navbar'>
                 PT. INFORMASI DIGITAL MANDIRI
               </p>
             )}

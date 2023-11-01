@@ -25,7 +25,7 @@ const Service = () => {
 
         {/* Kolom Kanan (Gambar) */}
         <div className="flex justify-center items-center">
-          <img src="/img-service.png" alt="Gambar" className="w-full md:max-w-md h-auto" />
+          <img src="/img-service.png" alt="Gambar" className="w-full md:max-w-md h-auto img-general" />
         </div>
       </div>
     </div>
